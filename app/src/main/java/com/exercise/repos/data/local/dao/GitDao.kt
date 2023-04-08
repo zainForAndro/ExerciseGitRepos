@@ -13,7 +13,7 @@ interface GitDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertItems(response: List<GitData>)
 
-    @Query("SELECT * FROM ReposResponse")
+    @Query("SELECT * FROM git_repos")
     fun getRepos() : LiveData<List<GitData>>
 
 }

@@ -1,4 +1,4 @@
-package com.exercise.repos.data
+package com.exercise.repos.data.remote
 
 import com.exercise.repos.data.remote.api.Api
 import okhttp3.OkHttpClient
@@ -11,7 +11,7 @@ object Service {
 
     fun getService() : Api {
         if (api == null){
-            api = Retrofit.Builder().baseUrl("")
+            api = Retrofit.Builder().baseUrl("https://api.github.com/search/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(getClient())
                 .build().create(Api::class.java)

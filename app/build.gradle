@@ -57,8 +57,11 @@ dependencies {
     kapt "androidx.room:room-compiler:2.5.1"
 
     //di/sl
-    implementation "org.koin:koin-android:2.0.1"
-    implementation "org.koin:koin-android-viewmodel:2.0.1"
+    implementation "io.insert-koin:koin-core:3.0.1"
+    implementation "io.insert-koin:koin-android-compat:3.0.1"
+//    implementation "org.koin:koin-core:2.0.1"
+//    implementation "org.koin:koin-android-viewmodel:2.0.1"
+//    implementation "org.koin:koin-android-architecture:0.8.2"
 
 
 }
