@@ -4,6 +4,7 @@ import com.exercise.repos.data.remote.api.Api
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 object Service {
 
@@ -20,8 +21,13 @@ object Service {
     }
 
 
+
     private fun getClient() : OkHttpClient{
-        return OkHttpClient.Builder().build()
+        return OkHttpClient.Builder()
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .build()
     }
 
 }

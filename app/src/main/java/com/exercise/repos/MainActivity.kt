@@ -14,9 +14,8 @@ class MainActivity : AppCompatActivity() {
         viewModel.start()
 
         viewModel.getData().observe(this) {
-
             for (i in it){
-                println("Names ${i.name}")
+                println("Names $i")
             }
 
         }

@@ -6,7 +6,7 @@ import retrofit2.http.GET
 interface Api {
 
 
-    @GET("repositories?q=language=+sort:stars")
+    @GET("hel/buddy")
     suspend fun getRepos() : retrofit2.Response<Response>
 
 }

@@ -15,6 +15,7 @@ android {
         versionCode 1
         versionName "1.0"
 
+//        multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -30,6 +31,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
     }
 }
 
@@ -47,6 +52,13 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation 'com.squareup.okhttp3:mockwebserver:4.10.0'
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    androidTestImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4"
+    androidTestImplementation "com.google.truth:truth:1.1.3"
+    androidTestImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation "com.google.truth:truth:1.1.3"
+
 
     //networking
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -55,14 +67,16 @@ dependencies {
     //local storage
     implementation "androidx.room:room-runtime:2.5.1"
     implementation "androidx.room:room-ktx:2.5.1"
+    androidTestImplementation 'org.junit.jupiter:junit-jupiter'
+    androidTestImplementation 'org.junit.jupiter:junit-jupiter'
     kapt "androidx.room:room-compiler:2.5.1"
 
     //di/sl
     implementation "io.insert-koin:koin-core:3.0.1"
     implementation "io.insert-koin:koin-android-compat:3.0.1"
-//    implementation "org.koin:koin-core:2.0.1"
-//    implementation "org.koin:koin-android-viewmodel:2.0.1"
-//    implementation "org.koin:koin-android-architecture:0.8.2"
+
+    //supporting
+//    implementation "androidx.multidex:multidex:2.0.1"
 
 
 }
