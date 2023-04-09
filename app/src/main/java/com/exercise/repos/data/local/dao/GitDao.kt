@@ -1,6 +1,5 @@
 package com.exercise.repos.data.local.dao
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
@@ -11,9 +10,11 @@ import com.exercise.repos.data.models.GitData
 interface GitDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertItems(response: List<GitData>)
+    suspend fun insertItems(response: List<GitData>)
 
     @Query("SELECT * FROM git_repos")
-    fun getRepos() : LiveData<List<GitData>>
+    suspend fun getRepos() : List<GitData>?
+    @Query("DELETE FROM git_repos")
+    suspend fun delete()
 
 }

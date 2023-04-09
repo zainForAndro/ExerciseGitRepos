@@ -5,21 +5,27 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 
+
+data class Response(
+
+    @SerializedName("items")
+    val list: List<GitData>
+)
 @Entity("git_repos")
 data class GitData(
-    @PrimaryKey
-    val key : Int = 0,
+    @PrimaryKey(autoGenerate = true)
+    var key : Int,
     @SerializedName("name")
-    val name : String? = null,
+    var name : String? = null,
     @SerializedName("full_name")
-    val full_name : String? = null,
+    var full_name : String? = null,
     @SerializedName("description")
-    val description : String? = null,
+    var description : String? = null,
     @SerializedName("language")
-    val language : String? = null,
+    var language : String? = null,
     @SerializedName("score")
-    val score : String? = null,
+    var score : String? = null,
     @SerializedName("avatar_url")
-    val avatarUrl : String? = null,
+    var avatarUrl : String? = null,
 
     )

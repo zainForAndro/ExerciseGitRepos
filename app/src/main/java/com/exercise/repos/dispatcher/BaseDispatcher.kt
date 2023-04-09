@@ -7,7 +7,7 @@ import kotlinx.coroutines.delay
 
 abstract class BaseDispatcher {
 
-    abstract suspend fun getData(dataSource: DataSource, response: (response: Any?) -> Unit)
+    abstract suspend fun <T>getData(dataSource: DataSource, response: (response: T?) -> Unit)
 
 }
 

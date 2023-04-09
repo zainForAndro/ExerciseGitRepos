@@ -9,11 +9,11 @@ import kotlinx.coroutines.launch
 
 abstract class BaseViewModel(private val dispatcher: BaseDispatcher) : ViewModel(){
 
-    fun fetchData(dataSource: DataSource, response: (response: Object) -> Unit){
+    fun <T>fetchData(dataSource: DataSource, response: (response: T?) -> Unit){
 
         CoroutineScope(Dispatchers.IO).launch {
-            dispatcher.getData(dataSource) {
-
+            dispatcher.getData<T>(dataSource) {
+                response(it)
             }
 
         }
