@@ -6,7 +6,7 @@ import com.exercise.repos.data.models.GitData
 
 class GitLocalRepo(private val dao : GitDao): BaseLocalRepo() {
 
-    override suspend fun getLocalData(): Any? {
+    override suspend fun getLocalData(): List<GitData>? {
         return dao.getRepos()
     }
 

@@ -41,9 +41,18 @@ class GitDispatcherTest {
             val localResponse = localRepo.getLocalData()
             assertThat(localResponse).isEqualTo(this@GitDispatcherTest.response.list)
 
+        }
+    }
+
+    @Test
+    fun testDeletion(){
+        runTest {
+            localRepo.insertData(response.list)
+
+
             localRepo.deletePreviousData()
             val data = localRepo.getLocalData()
-            assertThat(data).isNotEqualTo(this@GitDispatcherTest.response.list)
+            assertThat(data.isNullOrEmpty()).isTrue()
         }
     }
 

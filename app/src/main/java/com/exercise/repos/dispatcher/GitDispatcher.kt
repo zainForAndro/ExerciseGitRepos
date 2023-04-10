@@ -14,7 +14,7 @@ class GitDispatcher(
                                      error: (error: String) -> Unit) {
         if (dataSource == DataSource.LOCAL) {
             val res = localRepo.getLocalData()
-            if (res == null || (res is List<*> && res.isEmpty())) {
+            if (res == null || res.isEmpty()) {
                 try {
                     val remRes = remoteRepo.getRemoteData().body()
                     if (remRes is Response) {
