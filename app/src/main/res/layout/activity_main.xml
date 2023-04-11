@@ -87,7 +87,8 @@
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/errorGroup"
-            app:constraint_referenced_ids="lottie_animation, retry_button"
+            app:constraint_referenced_ids="lottie_animation, retry_button,
+error_title,error_des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
