@@ -1,20 +1,12 @@
 package com.exercise.repos.data.models
 
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+import androidx.room.*
 import com.google.gson.annotations.SerializedName
 
-
-
-data class Response(
-
-    @SerializedName("items")
-    val list: List<GitData>
-)
 @Entity("git_repos")
-data class GitData(
+data class GitLocalData(
     @PrimaryKey(autoGenerate = true)
-    var key : Int,
+    var key : Long = 0,
     @SerializedName("name")
     var name : String? = null,
     @SerializedName("full_name")
@@ -26,6 +18,5 @@ data class GitData(
     @SerializedName("score")
     var score : String? = null,
     @SerializedName("avatar_url")
-    var avatarUrl : String? = null,
-
-    )
+    var avatarUrl: String? = null
+)
