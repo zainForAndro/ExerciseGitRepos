@@ -2,6 +2,8 @@ package com.exercise.repos.dispatcher
 
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
+import com.exercise.repos.business.dispatcher.BaseDispatcher
+import com.exercise.repos.business.dispatcher.DataSource
 import com.exercise.repos.data.local.AppDataBase
 import com.exercise.repos.data.local.dao.GitDao
 import com.exercise.repos.data.local.repos.GitLocalRepo

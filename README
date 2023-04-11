@@ -1,0 +1,18 @@
+This application is based on a clean architecture with use-case dependency.
+
+This application has abstract classes "BaseDispatcher" and BaseViewModel with functions getData() and fetchData() respectively with generic types.
+
+Any use case can extend these classes to get its own data.
+
+Koin is used for dependency injection.
+
+Test cases are written for data repositories.
+
+Local data storage is enabled using Room database.
+
+Light and Dark modes are enabled.
+
+
+
+
+

@@ -1,5 +1,7 @@
 package com.exercise.repos.dispatcher
 
+import com.exercise.repos.business.dispatcher.BaseDispatcher
+import com.exercise.repos.business.dispatcher.DataSource
 import com.exercise.repos.data.models.GitLocalData
 import com.exercise.repos.data.models.remote.GitRemoteData
 import com.exercise.repos.data.models.remote.GitReposResponse

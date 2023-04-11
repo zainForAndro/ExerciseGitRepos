@@ -1,4 +1,4 @@
-package com.exercise.repos.dispatcher
+package com.exercise.repos.business.dispatcher
 
 import com.exercise.repos.data.local.repos.GitLocalRepo
 import com.exercise.repos.data.models.GitLocalData
@@ -47,7 +47,12 @@ class GitDispatcher(
                 localRepo.insertData(localMappedData)
                 response(localMappedData as T)
             } else {
-                error(remRes.toString())
+                val localResponse = localRepo.getLocalData()
+                if (localResponse != null && localResponse.isNotEmpty()){
+                    response(localResponse as T)
+                } else {
+                    error(remRes.toString())
+                }
             }
         }
     }
